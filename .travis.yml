@@ -17,6 +17,7 @@ deploy:
   provider: heroku
   api_key:
     secure: $APIKEY
-
+  app: intense-journey-46108
+    
 script:
   - npm run test.prod
