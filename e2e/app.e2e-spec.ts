@@ -9,6 +9,6 @@ describe('demo App', () => {
 
   it('should display message saying app works', () => {
     page.navigateTo();
-    expect(page.getParagraphText()).toEqual('Angular demo application for Continuous Delivery demo v2 dev');
+    expect(page.getParagraphText()).toEqual('Angular demo application for Continuous Delivery demo');
   });
 });
