@@ -1,4 +1,23 @@
 language: node_js
 node_js:
-  - "6.95"
+  - "6.9.4"
 
+sudo: false
+dist: trusty
+addons:
+  apt:
+    packages:
+      - google-chrome-stable
+before_script:
+  - export DISPLAY=:99.0
+  - sh -e /etc/init.d/xvfb start &
+  - sleep 3
+
+deploy:
+  provider: heroku
+  api_key:
+    secure: $APIKEY
+  app: intense-journey-46108
+    
+script:
+  - npm run test.prod
