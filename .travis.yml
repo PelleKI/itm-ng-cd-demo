@@ -1,39 +1,4 @@
-branches:
-  only:
-  - master
-  - develop
-
-sudo: false
-dist: trusty
-
 language: node_js
-
 node_js:
-- 6.9.4
+  - "6.95"
 
-addons:
-  apt:
-    packages:
-      - google-chrome-stable
-
-before_script:
-  - export DISPLAY=:99.0
-  - sh -e /etc/init.d/xvfb start &
-  - sleep 3
-
-script:
-  - npm run lint
-  - npm run test.prod
-  - npm run e2e.prod
-
-cache:
-  directories:
-  - node_modules
-
-deploy:
-  provider: heroku
-  app:
-    master: itm-demo-1
-    develop: itm-demo-2
-  api_key:
-    secure: hOlzGrS3KtK9CeYT71Xn5YTTpIxdJ/4PaQi3nk3EuJpqcOL7lhCT6U4HyqCZyx0Eoo83ytNONjMKp6VxuujF4a/wwhhPcpfzXZMsAeAJLwaM0njiJbiAQd2hYUhCnMirYMIX4na0e4jeWCuInC2sMlR3oWsh79K9upNvdK+KJRKeo30oAvg5OXXe3gH0SlOZlS1fQdDfnQs8ey/n8PoJja/kavOn4BAPAudHAeTKtWSJyJOhc0NenTTs/9zlVMmGI/IIKnLzh9aBde/jlzsOduo0jpQ20YPmJMUtf7RlUOAF8uiqS3WlK0p5ICP1GMdwbEoYtDpyqBPE/Wo5NunhICgytIfSxqeQZVDaXhkw3RNCz/c/V1FV5/F7RXT8AErYQ2ztewoG+xSisfIQ/YoM6+Bi/Gv3Ijf/cLuLIHtSZEBZrXeX3Ov1NUf+BgeTGByuIQjQOtChvOaIcaM/LpMQKHo6BPnBhdygFSmt490L3AcVEy4aZBfBc6jYltGHGfkeBwappu56aJffeb6ETKjLAtsteSkhtOwM3PmGx8D+Jkv2Tp98Vi44CSBMZ9Ucd0W4SymMJun+Oz9rn8/IJUt4Uyi1Q0gA6ztYvRqCFSxEic3+8GGenPXN+hxIlgj900ph/sPK/fAAnBWA0QKd6cK7OxpnWn+7c681GVIBXqALjtY=
