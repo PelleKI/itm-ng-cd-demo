@@ -17,3 +17,6 @@ deploy:
   provider: heroku
   api_key:
     secure: $APIKEY
+
+script:
+  - npm run test.prod
